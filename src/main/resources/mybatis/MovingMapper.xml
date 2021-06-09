@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wematch.moving.dao.MovingMapper">
+    <insert id="insertReqInfo" >
+        INSERT INTO MOVING_REQ_INFO (
+            MV_REQ_START_ADDR
+            , MV_REQ_END_ADDR
+            , MV_REQ_START_FLOOR
+            , MV_REQ_END_FLOOR
+            , MV_INSERT_DATE
+            , MV_STORAGE_YN
+            , USER_SEQ
+        )
+        VALUES (
+            #{mvReqStartAddr}
+            , #{mvReqEndAddr}
+            , #{mvReqStartFloor}
+            , #{mvReqEndFloor}
+            , #{mvInsertDate}
+            , #{mvStorageYn}
+            , #{userSeq}
+        )
+    </insert>
+    <insert id="insertMovingMapping" >
+        INSERT INTO MOVING_CENTER_REQ_MAPPING (
+            MC_SEQ
+            , MV_REQ_SEQ
+            , STATUS
+        )
+        VALUES (
+            #{mcSeq}
+            , #{mvReqSeq}
+            , #{status}
+       )
+    </insert>
+    <select id="getMovingReqInfoList" resultType="java.util.HashMap">
+        SELECT  B.USER_NAME AS name
+                , B.USER_TEL AS tel
+                , A.MV_REQ_START_ADDR AS start_address
+                , A.MV_REQ_END_ADDR AS end_address
+                , date_format(A.MV_INSERT_DATE,'%Y-%m-%d') AS moving_date
+                , MV_STORAGE_YN AS is_storage
+        FROM    MOVING_REQ_INFO A
+        INNER
+        JOIN    AC_USER B
+        ON      A.USER_SEQ = B.USER_SEQ
+        WHERE   B.USE_YN = 'Y'
+        AND     A.MV_REQ_SEQ = #{mvReqSeq}
+        AND     A.USER_SEQ = #{userSeq}
+    </select>
+</mapper>
