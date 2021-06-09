@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wematch.feedback.dao.FeedBackMapper">
+    <insert id="insertFeedBackHist" >
+        INSERT INTO AC_USER_FEEDBACK_HIST (
+            MM_SEQ
+            , KINDES
+            , DISC_YN
+            , PROFESSIONAL_RATING
+            , PRICE_RATING
+            , KINDNESS_RATING
+            , REVISIT_YN
+            , CONTRACT_PRICE
+            , MOVE_DATE
+            , FEEDBACK_DATE
+            , FEEDBACK_DESC
+        )
+        VALUES (
+            #{mmSeq}
+            , #{kindes}
+            , #{discYn}
+            , #{professionalRating}
+            , #{priceRating}
+            , #{kindnessRating}
+            , #{revisitYn}
+            , #{contractPrice}
+            , #{moveDate}
+            , #{feedbackDate}
+            , #{feedbackDesc}
+        )
+    </insert>
+</mapper>
