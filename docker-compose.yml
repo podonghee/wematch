@@ -15,7 +15,7 @@ services:
   application:
     build: .
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mariadb://database:3306/test?useUnicode=true
+      SPRING_DATASOURCE_URL: jdbc:mariadb://database:3306/wematch?useUnicode=true
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: 1234
     ports:
