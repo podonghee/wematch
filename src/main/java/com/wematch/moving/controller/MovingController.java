@@ -42,7 +42,7 @@ public class MovingController {
      * Author : po dong hee
      * Description : 이사신청 등록 디테일 뷰
      * */
-    @RequestMapping(value = "/getMovingReqInfo",method = RequestMethod.GET)
+    @RequestMapping(value = "/getMovingReqInfo",method = RequestMethod.POST)
     public Object getMovingReqInfo(@RequestBody Object param) {
         return movingService.getMovingReqInfo(param);
     }
