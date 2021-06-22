@@ -4,6 +4,7 @@ import com.wematch.company.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -21,16 +22,16 @@ public class CompanyController {
      * Author : po dong hee
      * Description : 이사업체 등록
      * */
-    @RequestMapping("/movingCenter")
+    @RequestMapping(value = "/movingCenter",method = RequestMethod.POST)
     public Object movingCenter(@RequestBody CompanyDTO dto){
         return companyService.insertMovingCenter(dto);
     }
     /**
      * Date : 2021.06.07
      * Author : po dong hee
-     * Description : 이사업체 등록
+     * Description : 이사업체 List
      * */
-    @RequestMapping("/getMovingCenterList")
+    @RequestMapping(value = "/getMovingCenterList",method = RequestMethod.GET)
     public Object getMovingCenterList()  {
         return companyService.getMovingCenterList();
     }

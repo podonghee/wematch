@@ -4,6 +4,7 @@ import com.wematch.moving.service.MovingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -23,7 +24,7 @@ public class MovingController {
      * Author : po dong hee
      * Description : 이사신청 등록
      * */
-    @RequestMapping({"/reqInfo"})
+    @RequestMapping(value = "/reqInfo",method = RequestMethod.POST)
     public Object reqInfo(@RequestBody Object param) {
         return movingService.insertReqInfo(param);
     }
@@ -32,7 +33,7 @@ public class MovingController {
      * Author : po dong hee
      * Description : 이사업체와 이사신청에 대한 맵핑 등록
      * */
-    @RequestMapping({"/movingCenterMapping"})
+    @RequestMapping(value = "/movingCenterMapping",method = RequestMethod.POST)
     public Object movingCenterMapping(@RequestBody Object param) {
         return movingService.insertCenterMapping(param);
     }
@@ -41,7 +42,7 @@ public class MovingController {
      * Author : po dong hee
      * Description : 이사신청 등록 디테일 뷰
      * */
-    @RequestMapping({"/getMovingReqInfo"})
+    @RequestMapping(value = "/getMovingReqInfo",method = RequestMethod.GET)
     public Object getMovingReqInfo(@RequestBody Object param) {
         return movingService.getMovingReqInfo(param);
     }

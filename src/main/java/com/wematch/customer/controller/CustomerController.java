@@ -5,6 +5,7 @@ import com.wematch.customer.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -22,7 +23,7 @@ public class CustomerController {
      * Author : po dong hee
      * Description : 고객 등록
      * */
-    @RequestMapping("/register")
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
     public Object register(@RequestBody CustomerDTO dto){
        return customerService.insertUser(dto);
     }
@@ -31,7 +32,7 @@ public class CustomerController {
      * Author : po dong hee
      * Description : 고객 리스트
      * */
-    @RequestMapping("/getUserInfo")
+    @RequestMapping(value = "/getUserInfo", method = RequestMethod.GET)
     public Object getUserInfo()  {
         return customerService.getUserInfo();
     }
