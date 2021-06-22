@@ -18,6 +18,8 @@ com/wematch/feedback/service/FeedBackService.java
  com.wematch.feedback.service.FeedBackService
 com/wematch/moving/dao/MovingMapper.java
  com.wematch.moving.dao.MovingMapper
+com/wematch/config/Swagger2Config.java
+ com.wematch.config.Swagger2Config
 com/wematch/company/bean/CompanyDTO.java
  com.wematch.company.bean.CompanyDTO
 com/wematch/company/dao/CompanyMapper.java
