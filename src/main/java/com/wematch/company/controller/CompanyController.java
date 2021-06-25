@@ -22,7 +22,7 @@ public class CompanyController {
      * Author : po dong hee
      * Description : 이사업체 등록
      * */
-    @RequestMapping(value = "/movingCenter",method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public Object movingCenter(@RequestBody CompanyDTO dto){
         return companyService.insertMovingCenter(dto);
     }
@@ -31,8 +31,8 @@ public class CompanyController {
      * Author : po dong hee
      * Description : 이사업체 List
      * */
-    @RequestMapping(value = "/getMovingCenterList",method = RequestMethod.GET)
-    public Object getMovingCenterList()  {
+    @RequestMapping(method = RequestMethod.GET)
+    public Object getMovingCenterList(){
         return companyService.getMovingCenterList();
     }
 }

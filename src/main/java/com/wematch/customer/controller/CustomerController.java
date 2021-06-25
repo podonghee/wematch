@@ -23,7 +23,7 @@ public class CustomerController {
      * Author : po dong hee
      * Description : 고객 등록
      * */
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public Object register(@RequestBody CustomerDTO dto){
        return customerService.insertUser(dto);
     }
@@ -32,7 +32,7 @@ public class CustomerController {
      * Author : po dong hee
      * Description : 고객 리스트
      * */
-    @RequestMapping(value = "/getUserInfo", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public Object getUserInfo()  {
         return customerService.getUserInfo();
     }

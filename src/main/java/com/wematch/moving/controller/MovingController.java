@@ -24,7 +24,7 @@ public class MovingController {
      * Author : po dong hee
      * Description : 이사신청 등록
      * */
-    @RequestMapping(value = "/reqInfo",method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public Object reqInfo(@RequestBody Object param) {
         return movingService.insertReqInfo(param);
     }
@@ -33,7 +33,7 @@ public class MovingController {
      * Author : po dong hee
      * Description : 이사업체와 이사신청에 대한 맵핑 등록
      * */
-    @RequestMapping(value = "/movingCenterMapping",method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public Object movingCenterMapping(@RequestBody Object param) {
         return movingService.insertCenterMapping(param);
     }
@@ -42,7 +42,7 @@ public class MovingController {
      * Author : po dong hee
      * Description : 이사신청 등록 디테일 뷰
      * */
-    @RequestMapping(value = "/getMovingReqInfo",method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public Object getMovingReqInfo(@RequestBody Object param) {
         return movingService.getMovingReqInfo(param);
     }
